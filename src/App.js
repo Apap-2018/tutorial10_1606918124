@@ -2,9 +2,11 @@ import React from 'react';
 import { BrowserRouter as Router, NavLink, Route, Switch } from "react-router-dom";
 import './App.css';
 import { DaftarPasien } from './screens/DaftarPasien';
+import { DaftarStafFarmasi } from './screens/DaftarStafFarmasi';
 import { Home } from './screens/Home';
 import { NotFound } from './screens/NotFound';
 import { UpdatePasien } from './screens/UpdatePasien';
+import { AddLabResult } from './screens/AddLabResult';
 
 export class App extends React.Component {
 	render() {
@@ -23,6 +25,9 @@ export class App extends React.Component {
 								<li className='nav-item'>
 									<NavLink to="/all-pasien" exact className="nav-link" activeClassName="active">Daftar Pasien</NavLink>
 								</li>
+								<li className='nav-item'>
+									<NavLink to="/all-staf-farmasi" exact className="nav-link" activeClassName="active">Daftar Staf Farmasi</NavLink>
+								</li>
 							</ul>
 						</div>
 					</nav>
@@ -31,7 +36,9 @@ export class App extends React.Component {
 						<Switch>
 							<Route path="/" exact component={Home} />
 							<Route path="/all-pasien" exact component={DaftarPasien} />
+							<Route path="/all-staf-farmasi" exact component={DaftarStafFarmasi} />
 							<Route path="/update-pasien/:id" exact component={UpdatePasien} />
+							<Route path="/add-lab-result/:id" exact component={AddLabResult}/>
 							<Route path="/not-found" exact component={NotFound} />
 							<Route component={NotFound} />
 						</Switch>

@@ -1,0 +1,10 @@
+PERTANYAAN
+1. CORS adalah Cross-Origin Resource Sharing. 
+Penggunaan variabel cors yang berisikan url service cors anywhere digunakan untuk menambahkan header cors pada request 
+yang dikirimkan. Penambahan header cors pada request yang kita kirimkan memberitahu browser bahwa "OK" untuk 
+mengeksekusi kode Javascript dari panggilan lintas domain.
+
+2. Akan terjadi Gagal Update pada pasien yang ingin diupdate.
+Hal ini terjadi karena response mengembalikan 500 (Internal Server Error). 
+Kode tersebut melakukan assignment variable dataJson dengan index 'id' dengan 'value id'
+dari pasien tersebut. Jika diganti dengan key, maka data tidak akan diassign dan error.

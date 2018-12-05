@@ -6,23 +6,49 @@ export const Appointment = {
 		return fetch(`${cors}${baseUrl}/1/getAllPasien`, {
 			method: 'GET',
 		})
-		.then(response => {
-			return response.json()
+			.then(response => {
+				return response.json()
+			})
+			.then(jsonResponse => {
+				return jsonResponse
+			})
+	},
+	getAllStafFarmasi() {
+		return fetch(`${cors}${baseUrl}/1/getAllStaffFarmasi`, {
+			method: 'GET',
 		})
-		.then(jsonResponse => {
-			return jsonResponse
+			.then(response => {
+				return response.json()
+			})
+			.then(jsonResponse => {
+				return jsonResponse
+			})
+	},
+	addLabResult(requestBody) {
+		return fetch(`${cors}${baseUrl}/1/addLabResult`, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(requestBody)
 		})
+			.then(response => {
+				return response.json()
+			})
+			.then(jsonResponse => {
+				return jsonResponse
+			})
 	},
 	getDetailPasien(idPasien) {
 		return fetch(`${cors}${baseUrl}/getPasien/${idPasien}`, {
 			method: 'GET',
 		})
-		.then(response => {
-			return response.json()
-		})
-		.then(jsonResponse => {
-			return jsonResponse
-		})
+			.then(response => {
+				return response.json()
+			})
+			.then(jsonResponse => {
+				return jsonResponse
+			})
 	},
 	updateStatusPasien(requestBody) {
 		return fetch(`${cors}${baseUrl}/1/updatePasien`, {
@@ -32,11 +58,11 @@ export const Appointment = {
 			},
 			body: JSON.stringify(requestBody)
 		})
-		.then(response => {
-			return response.json()
-		})
-		.then(jsonResponse => {
-			return jsonResponse
-		})
+			.then(response => {
+				return response.json()
+			})
+			.then(jsonResponse => {
+				return jsonResponse
+			})
 	}
 }
